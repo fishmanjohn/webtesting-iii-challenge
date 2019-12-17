@@ -6,3 +6,13 @@ import Display from './Display'
 test('display renders without crashing',()=>{
 render(<Display/>);
 })
+
+test('gate is unlocked when app starts',()=>{
+    const {getByText} = render(<Display/>) 
+    getByText(/Unlocked/i)
+} );
+
+test('gate is open when app starts', ()=>{
+    const {getByText} = render(<Display/>) 
+    getByText(/Open/i)
+})
